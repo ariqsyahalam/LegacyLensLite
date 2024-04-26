@@ -11,6 +11,9 @@
 		440BACCD2BDBFC2100B7E517 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BACCC2BDBFC2100B7E517 /* ContentView.swift */; };
 		440BACCF2BDBFC2200B7E517 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 440BACCE2BDBFC2200B7E517 /* Assets.xcassets */; };
 		440BACD22BDBFC2200B7E517 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 440BACD12BDBFC2200B7E517 /* Preview Assets.xcassets */; };
+		440BACDA2BDBFC9A00B7E517 /* ARKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 440BACD92BDBFC9A00B7E517 /* ARKit.framework */; };
+		440BACDD2BDBFE5B00B7E517 /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BACDC2BDBFE5B00B7E517 /* ARViewContainer.swift */; };
+		440BACE32BDC010800B7E517 /* Bananas_for_scale_in_Augmented_Reality.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 440BACE22BDC010800B7E517 /* Bananas_for_scale_in_Augmented_Reality.usdz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,10 @@
 		440BACCC2BDBFC2100B7E517 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		440BACCE2BDBFC2200B7E517 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		440BACD12BDBFC2200B7E517 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		440BACD92BDBFC9A00B7E517 /* ARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARKit.framework; path = System/Library/Frameworks/ARKit.framework; sourceTree = SDKROOT; };
+		440BACDB2BDBFDD800B7E517 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		440BACDC2BDBFE5B00B7E517 /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
+		440BACE22BDC010800B7E517 /* Bananas_for_scale_in_Augmented_Reality.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = Bananas_for_scale_in_Augmented_Reality.usdz; path = ../../../Downloads/Bananas_for_scale_in_Augmented_Reality.usdz; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				440BACDA2BDBFC9A00B7E517 /* ARKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +45,7 @@
 			children = (
 				440BACC92BDBFC2100B7E517 /* LegacyLensLite */,
 				440BACC82BDBFC2100B7E517 /* Products */,
+				440BACD82BDBFC9A00B7E517 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,10 +60,13 @@
 		440BACC92BDBFC2100B7E517 /* LegacyLensLite */ = {
 			isa = PBXGroup;
 			children = (
+				440BACDB2BDBFDD800B7E517 /* Info.plist */,
 				440BACCA2BDBFC2100B7E517 /* LegacyLensLiteApp.swift */,
 				440BACCC2BDBFC2100B7E517 /* ContentView.swift */,
+				440BACE22BDC010800B7E517 /* Bananas_for_scale_in_Augmented_Reality.usdz */,
 				440BACCE2BDBFC2200B7E517 /* Assets.xcassets */,
 				440BACD02BDBFC2200B7E517 /* Preview Content */,
+				440BACDC2BDBFE5B00B7E517 /* ARViewContainer.swift */,
 			);
 			path = LegacyLensLite;
 			sourceTree = "<group>";
@@ -65,6 +77,14 @@
 				440BACD12BDBFC2200B7E517 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		440BACD82BDBFC9A00B7E517 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				440BACD92BDBFC9A00B7E517 /* ARKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +147,7 @@
 			files = (
 				440BACD22BDBFC2200B7E517 /* Preview Assets.xcassets in Resources */,
 				440BACCF2BDBFC2200B7E517 /* Assets.xcassets in Resources */,
+				440BACE32BDC010800B7E517 /* Bananas_for_scale_in_Augmented_Reality.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +160,7 @@
 			files = (
 				440BACCD2BDBFC2100B7E517 /* ContentView.swift in Sources */,
 				440BACCB2BDBFC2100B7E517 /* LegacyLensLiteApp.swift in Sources */,
+				440BACDD2BDBFE5B00B7E517 /* ARViewContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +297,8 @@
 				DEVELOPMENT_TEAM = 87N548UZ24;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LegacyLensLite/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Digunakan untuk augmented reality";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +328,8 @@
 				DEVELOPMENT_TEAM = 87N548UZ24;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LegacyLensLite/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Digunakan untuk augmented reality";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
