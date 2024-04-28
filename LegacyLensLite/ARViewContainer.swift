@@ -13,17 +13,19 @@ struct ARViewContainer: UIViewRepresentable {
         let arView = ARSCNView(frame: .zero)
         arView.delegate = context.coordinator
         
-        let configuration = ARImageTrackingConfiguration()
+        // Menggunakan ARWorldTrackingConfiguration untuk deteksi plane dan gambar
+        let configuration = ARWorldTrackingConfiguration()
+        configuration.planeDetection = [.horizontal] // Deteksi horizontal plane
         if let trackedImages = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: nil) {
-            configuration.trackingImages = trackedImages
+            configuration.detectionImages = trackedImages
             configuration.maximumNumberOfTrackedImages = 1
-            print("ARSession configured with \(trackedImages.count) images.")
-        } else {
-            print("No images available to track.")
         }
+        print("ARSession configured for world tracking and image detection.")
         arView.session.run(configuration)
         return arView
     }
+    
+    
     
     func updateUIView(_ uiView: ARSCNView, context: Context) {}
     
@@ -39,20 +41,25 @@ struct ARViewContainer: UIViewRepresentable {
         }
         
         func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-            if let imageAnchor = anchor as? ARImageAnchor {
-                let referenceImage = imageAnchor.referenceImage
-                print("Detected image named: \(referenceImage.name ?? "Unknown") at \(node.position)")
+            if let planeAnchor = anchor as? ARPlaneAnchor {
+                print("Horizontal plane detected")
                 DispatchQueue.main.async {
-                    let cubeNode = self.createCubeNode()
-                    node.addChildNode(cubeNode)
-                    print("Cube node added to the scene.")
+                    let modelNode = self.load3DModel()
+                    modelNode.position = SCNVector3(planeAnchor.center.x, 0, planeAnchor.center.z)
+                    node.addChildNode(modelNode)
+                    print("3D model of myself added to the scene.")
                 }
-            } else {
-                print("The added anchor is not an image anchor.")
             }
         }
-
-
+        
+        func load3DModel() -> SCNNode {
+            guard let scene = SCNScene(named: "SceneMyModel.usdz") else {
+                fatalError("Failed to load the 3D model.")
+            }
+            let modelNode = scene.rootNode.clone()
+            return modelNode
+        }
+        
         func createCubeNode() -> SCNNode {
             let cubeGeometry = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0)
             cubeGeometry.firstMaterial?.diffuse.contents = UIColor.blue
@@ -60,9 +67,8 @@ struct ARViewContainer: UIViewRepresentable {
             print("Created a cube node with dimensions 0.1m x 0.1m x 0.1m.")
             return cubeNode
         }
-
-
+        
+        
         
     }
 }
-
