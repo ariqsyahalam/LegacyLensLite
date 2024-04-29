@@ -9,9 +9,11 @@ import SwiftUI
 import ARKit
 
 struct ARViewContainer: UIViewRepresentable {
+    @Binding var arView: ARSCNView?
+    
     func makeUIView(context: Context) -> ARSCNView {
-        let arView = ARSCNView(frame: .zero)
-        arView.delegate = context.coordinator
+        let view = ARSCNView(frame: .zero)
+        view.delegate = context.coordinator
         
         // Menggunakan ARWorldTrackingConfiguration untuk deteksi plane dan gambar
         let configuration = ARWorldTrackingConfiguration()
@@ -21,13 +23,20 @@ struct ARViewContainer: UIViewRepresentable {
             configuration.maximumNumberOfTrackedImages = 1
         }
         print("ARSession configured for world tracking and image detection.")
-        arView.session.run(configuration)
-        return arView
+        view.session.run(configuration)
+        
+        DispatchQueue.main.async {
+            self.arView = view
+        }
+        
+        return view
     }
     
-    
-    
     func updateUIView(_ uiView: ARSCNView, context: Context) {}
+    
+    static func dismantleUIView(_ uiView: ARSCNView, coordinator: ()) {
+        uiView.session.pause()
+    }
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)

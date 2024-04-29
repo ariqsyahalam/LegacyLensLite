@@ -28,6 +28,7 @@
 		440BACDC2BDBFE5B00B7E517 /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
 		440BACE22BDC010800B7E517 /* Bananas_for_scale_in_Augmented_Reality.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = Bananas_for_scale_in_Augmented_Reality.usdz; path = ../../../Downloads/Bananas_for_scale_in_Augmented_Reality.usdz; sourceTree = "<group>"; };
 		440BACE42BDE712500B7E517 /* SceneMyModel.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = SceneMyModel.usdz; path = ../../../Downloads/SceneMyModel.usdz; sourceTree = "<group>"; };
+		448826312BDF427C00B57739 /* sampleVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = sampleVideo.mp4; path = ../../../Downloads/TestAR/TestAR/sampleVideo.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +63,7 @@
 		440BACC92BDBFC2100B7E517 /* LegacyLensLite */ = {
 			isa = PBXGroup;
 			children = (
+				448826312BDF427C00B57739 /* sampleVideo.mp4 */,
 				440BACE42BDE712500B7E517 /* SceneMyModel.usdz */,
 				440BACDB2BDBFDD800B7E517 /* Info.plist */,
 				440BACCA2BDBFC2100B7E517 /* LegacyLensLiteApp.swift */,
@@ -302,7 +304,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LegacyLensLite/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Digunakan untuk augmented reality";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Aplikasi ini membutuhkan akses kamera untuk augmented reality.";
+				INFOPLIST_KEY_NSFileProviderDomainUsageDescription = "required to save pictures in photo gallery";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "required to save pictures in photo gallery";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -333,7 +337,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LegacyLensLite/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Digunakan untuk augmented reality";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Aplikasi ini membutuhkan akses kamera untuk augmented reality.";
+				INFOPLIST_KEY_NSFileProviderDomainUsageDescription = "required to save pictures in photo gallery";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "required to save pictures in photo gallery";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
