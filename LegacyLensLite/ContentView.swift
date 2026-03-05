@@ -6,32 +6,25 @@
 //
 
 import SwiftUI
-import ARKit
 
 struct ContentView: View {
-    @State private var arView: ARSCNView?
+    @StateObject var viewModel = ARViewModel()
 
     var body: some View {
-        ZStack(alignment: .bottom) {
-            ARViewContainer(arView: $arView)
-            Button(action: takeSnapshot) {
-                Image(systemName: "camera")
-                    .frame(width: 60, height: 60)
-                    .font(.title)
-                    .background(Color.white.opacity(0.75))
-                    .cornerRadius(30)
-                    .padding()
+        ZStack {
+            ARViewContainer()
+                .edgesIgnoringSafeArea(.all)
+            VStack {
+                Spacer()
+                Button("Interact") {
+                    viewModel.handleUserInteraction()
+                }
             }
         }
-    }
-
-    func takeSnapshot() {
-        if let image = arView?.snapshot() {
-            let compressedImage = UIImage(data: image.pngData()!)
-            UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
-        }
+        .environmentObject(viewModel)
     }
 }
+
 
 
 #Preview {

@@ -15,6 +15,7 @@
 		440BACDD2BDBFE5B00B7E517 /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BACDC2BDBFE5B00B7E517 /* ARViewContainer.swift */; };
 		440BACE32BDC010800B7E517 /* Bananas_for_scale_in_Augmented_Reality.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 440BACE22BDC010800B7E517 /* Bananas_for_scale_in_Augmented_Reality.usdz */; };
 		440BACE52BDE712500B7E517 /* SceneMyModel.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 440BACE42BDE712500B7E517 /* SceneMyModel.usdz */; };
+		4488268A2BE091E900B57739 /* ARViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448826892BE091E900B57739 /* ARViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		440BACE22BDC010800B7E517 /* Bananas_for_scale_in_Augmented_Reality.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = Bananas_for_scale_in_Augmented_Reality.usdz; path = ../../../Downloads/Bananas_for_scale_in_Augmented_Reality.usdz; sourceTree = "<group>"; };
 		440BACE42BDE712500B7E517 /* SceneMyModel.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = SceneMyModel.usdz; path = ../../../Downloads/SceneMyModel.usdz; sourceTree = "<group>"; };
 		448826312BDF427C00B57739 /* sampleVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = sampleVideo.mp4; path = ../../../Downloads/TestAR/TestAR/sampleVideo.mp4; sourceTree = "<group>"; };
+		448826892BE091E900B57739 /* ARViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,14 +66,15 @@
 			isa = PBXGroup;
 			children = (
 				448826312BDF427C00B57739 /* sampleVideo.mp4 */,
-				440BACE42BDE712500B7E517 /* SceneMyModel.usdz */,
 				440BACDB2BDBFDD800B7E517 /* Info.plist */,
-				440BACCA2BDBFC2100B7E517 /* LegacyLensLiteApp.swift */,
+				440BACDC2BDBFE5B00B7E517 /* ARViewContainer.swift */,
+				448826892BE091E900B57739 /* ARViewModel.swift */,
 				440BACCC2BDBFC2100B7E517 /* ContentView.swift */,
+				440BACCA2BDBFC2100B7E517 /* LegacyLensLiteApp.swift */,
 				440BACE22BDC010800B7E517 /* Bananas_for_scale_in_Augmented_Reality.usdz */,
+				440BACE42BDE712500B7E517 /* SceneMyModel.usdz */,
 				440BACCE2BDBFC2200B7E517 /* Assets.xcassets */,
 				440BACD02BDBFC2200B7E517 /* Preview Content */,
-				440BACDC2BDBFE5B00B7E517 /* ARViewContainer.swift */,
 			);
 			path = LegacyLensLite;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			files = (
 				440BACCD2BDBFC2100B7E517 /* ContentView.swift in Sources */,
 				440BACCB2BDBFC2100B7E517 /* LegacyLensLiteApp.swift in Sources */,
+				4488268A2BE091E900B57739 /* ARViewModel.swift in Sources */,
 				440BACDD2BDBFE5B00B7E517 /* ARViewContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
